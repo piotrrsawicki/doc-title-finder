@@ -27,9 +27,13 @@ bash download-llms.sh
 
 ## Running
 
+In the example, we process documents from the `doc-input` directory. The resulting files are copied to the `doc-output` directory.
+The `doc-input` directory contains sample articles from [arXiv](https://arxiv.org/). The filenames of these documents are not meaningful, they represent some identifier of the document, for instance "2412.15754v1". So, the script will try to rename those files based on the title extracted from the document.
+
 Smaller LLMs like MiniCPM-1B work best on consumer hardware. They are faster and require less memory.  But they are prone to generating nonsense. Here in the example, we use it as the first LLM to give us a chance to fix errors for free. If the title is not good enough, we use the second LLM to give us a second chance.
 
 ```bash
+mkdir doc-output
 python doc-title-finder.py models/LFM2.5-350M-Q8_0.gguf models/MiniCPM5-1B-Q4_K_M.gguf doc-input/ doc-output/
 ```
 
