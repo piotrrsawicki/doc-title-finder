@@ -1,0 +1,9 @@
+# PDF text and metadata extraction
+pdfminer.six==20221105
+charset-normalizer==3.4.1
+
+# Local LLM inference engine
+llama-cpp-python==0.3.18
+
+# Natural language toolkit
+nltk==3.9.1
